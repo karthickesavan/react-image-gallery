@@ -1,0 +1,186 @@
+.site-header {
+  height: 76px;
+  padding: 0 7.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  background: rgba(250, 249, 246, 0.9);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--teal);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.07em;
+}
+
+.brand__mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--cream);
+  background: var(--teal);
+  border-radius: 10px;
+}
+
+.brand__dot { color: var(--gold); }
+.header-note { color: var(--muted); font-size: 0.8rem; letter-spacing: 0.04em; }
+
+.page-shell { width: min(1120px, 85%); margin: 0 auto; }
+.intro { padding: 88px 0 72px; }
+.eyebrow, .section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #9a6a2b;
+  font-size: 0.69rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+}
+.intro h1 {
+  margin-top: 22px;
+  color: var(--teal);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.4rem, 8vw, 6.5rem);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+.intro h1 span { color: #a7aaa0; font-style: italic; }
+.intro__copy {
+  max-width: 440px;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.intro__meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 34px;
+  color: var(--teal);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+.meta-line { width: 42px; height: 1px; background: var(--gold); }
+
+.gallery-section { padding-bottom: 92px; }
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 27px;
+}
+.section-heading h2 {
+  margin-top: 9px;
+  color: var(--teal);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+.image-count { color: var(--muted); font-size: 0.78rem; padding-bottom: 5px; }
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 22px;
+}
+.image-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 34px rgba(23, 58, 62, 0.1);
+}
+.image-card__media { height: 235px; position: relative; overflow: hidden; background: #e8e7e1; }
+.image-card__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+.image-card:hover .image-card__media img { transform: scale(1.045); }
+.image-card__category {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  padding: 7px 9px;
+  color: var(--teal);
+  background: rgba(250, 249, 246, 0.92);
+  border-radius: 3px;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+.image-card__link {
+  position: absolute;
+  right: 13px;
+  bottom: 13px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--teal);
+  background: var(--cream);
+  border-radius: 50%;
+}
+.image-card__content { padding: 18px 18px 20px; }
+.image-card__content h2 {
+  color: var(--teal);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.image-card__content p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.83rem;
+  line-height: 1.65;
+}
+
+.site-footer {
+  min-height: 72px;
+  padding: 20px 7.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #d7dfd9;
+  background: var(--teal);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+.site-footer span:last-child { color: #aebdb7; letter-spacing: 0; }
+
+@media (max-width: 850px) {
+  .image-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-shell { width: 88%; }
+  .intro { padding: 72px 0 60px; }
+}
+@media (max-width: 560px) {
+  .site-header { height: 66px; padding: 0 6%; }
+  .header-note { display: none; }
+  .page-shell { width: 88%; }
+  .intro { padding: 62px 0 52px; }
+  .intro h1 { font-size: clamp(3.3rem, 16vw, 5rem); }
+  .section-heading { align-items: start; gap: 12px; }
+  .section-heading h2 { font-size: 1.65rem; }
+  .image-count { font-size: 0.68rem; white-space: nowrap; padding-top: 23px; }
+  .image-grid { grid-template-columns: 1fr; gap: 19px; }
+  .image-card__media { height: 245px; }
+  .site-footer { align-items: flex-start; flex-direction: column; padding: 22px 6%; }
+}
